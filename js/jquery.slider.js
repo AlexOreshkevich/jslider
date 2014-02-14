@@ -160,7 +160,8 @@
       round: 0,
       format: { format: "#,##0.##" },
       value: "5;7",
-      dimension: ""
+      dimension: "",
+      rangePct: [10, 15, 50]
     },
     
     className: "jslider",
@@ -696,5 +697,5 @@
 		this.ptr.css({ left: prc + "%" });
 	  this.parent.redraw(this);
 	};
-  
+
 })(jQuery);
