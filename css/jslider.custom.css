@@ -1,0 +1,40 @@
+
+.jslider_custom .jslider-pointer {
+    width: 15px;
+    height: 35px;
+    top: -10px;
+    background: url(../img/jslider.custom.png) 0 0;
+    background-size: 100%;
+}
+
+.jslider_custom .jslider-value {
+    top: -30px;
+}
+
+.jslider_custom i {
+    background-image: none !important;
+    height: 15px !important;
+}
+
+.jslider_custom .jslider-bg .l, .jslider_custom .jslider-bg .r {
+    background-color: #31708f;
+}
+
+.jslider_custom .jslider-bg .ms, .jslider_custom .jslider-bg .me {
+    background-color: #5DAACF;
+    width: 15%;
+}
+
+.jslider_custom .jslider-bg .ms {
+    left: 10%;
+}
+
+.jslider_custom .jslider-bg .me {
+    left: 75%;
+}
+
+.jslider_custom .jslider-bg .f {
+    background-color: #A2DDF0;
+    left: 25%;
+    width: 50%;
+}
