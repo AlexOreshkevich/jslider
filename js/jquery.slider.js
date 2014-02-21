@@ -182,6 +182,7 @@
                 '<div class="<%=className%>-label"><span><%=settings.from%></span></div>' +
                 '<div class="<%=className%>-label <%=className%>-label-to"><span><%=settings.to%></span><%=settings.dimension%></div>' +
 
+                '<div style="display:none;" class="<%=className%>-value"><span></span><%=settings.dimension%></div>' +
                 '<div class="<%=className%>-value <%=className%>-value-to"><span></span><%=settings.dimension%></div>' +
 
                 '<div class="<%=className%>-scale"><%=scale%></div>' +
@@ -531,7 +532,7 @@
             switch (pointer.uid) {
                 case 0:
                     if (sizes.border + sizes.label / 2 > another_label.o.offset().left - this.sizes.domOffset.left) {
-                        another_label.o.css({ visibility: "hidden" });
+                       // TODO another_label.o.css({ visibility: "hidden" });
                         another_label.value.html(this.nice(another.value.origin));
 
                         label.o.css({ visibility: "visible" });
@@ -549,7 +550,7 @@
 
                 case 1:
                     if (sizes.border - sizes.label / 2 < another_label.o.offset().left - this.sizes.domOffset.left + another_label.o.outerWidth()) {
-                        another_label.o.css({ visibility: "hidden" });
+                       // another_label.o.css({ visibility: "hidden" });
                         another_label.value.html(this.nice(another.value.origin));
 
                         label.o.css({ visibility: "visible" });
@@ -605,16 +606,15 @@
                 }
 
             }
-            ;
 
+            /*
             for (var i = 0; i < limits.length; i++) {
                 if (limits[i])
                     this.o.limits[i].fadeIn("fast");
                 else
                     this.o.limits[i].fadeOut("fast");
             }
-            ;
-
+            */
         }
     };
 
