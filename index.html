@@ -5,7 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>jSlider</title>
 
-    <link rel="stylesheet" href="bin/jquery.slider.min.css" type="text/css">
+    <link rel="stylesheet" href="css/jslider.css" type="text/css">
+    <link rel="stylesheet" href="css/jslider.blue.css" type="text/css">
+    <link rel="stylesheet" href="css/jslider.plastic.css" type="text/css">
+    <link rel="stylesheet" href="css/jslider.round.css" type="text/css">
+    <link rel="stylesheet" href="css/jslider.round.plastic.css" type="text/css">
+
+
     <link rel="stylesheet" href="css/jslider.custom.css" type="text/css">
 
     <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
@@ -61,7 +67,7 @@
             locale: 'en' },
         dimension: '&nbsp;$',
         skin: "custom",
-        ranges: [1, 5, 50],
+        ranges: [1, 5, 25, 50],
 
         onstatechange: function (value) {
             $("#textInput1").val(value + "");
