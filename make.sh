@@ -12,5 +12,5 @@ uglifyjs bin/jquery.slider.all.js -mc -o bin/jquery.slider.min.js
 rm -f bin/jquery.slider.all.js
 
 # deply to the target environment
-rm -f ../NomisDemo/public/js/jquery.slider.min.js
-cp bin/jquery.slider.min.js ../NomisDemo/public/js/jquery.slider.min.js
+rm -f ../NomisDemo/client/jquery.slider.min.js
+cp bin/jquery.slider.min.js ../NomisDemo/client/jquery.slider.min.js

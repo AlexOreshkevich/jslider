@@ -39,7 +39,7 @@
     height: 5px;
     position: absolute;
     font-size: 0;
-    top: 0;
+    top: 2px;
 }
 
 .jslider .jslider-bg .l {
@@ -75,10 +75,7 @@
     width: 13px;
     height: 15px;
     background-position: 0 -60px;
-    position: absolute;
-    left: 20%;
-    top: -4px;
-    margin-left: -6px;
+    position: relative;
     cursor: pointer;
     cursor: hand;
 }
@@ -95,14 +92,15 @@
     color: black;
     opacity: 0.7;
     white-space: nowrap;
-    position: absolute;
-    left: -2em;
-    top: -0.1em;
+    padding-right: 0.2em;
+    display:inline-block; vertical-align:middle;
 }
 
 .jslider .jslider-label-to {
     left: auto;
     right: -3.5em;
+    padding-left: 1em;
+    padding-right: 0;
 }
 
 .jslider .jslider-value {

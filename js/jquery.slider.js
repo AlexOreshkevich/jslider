@@ -170,7 +170,10 @@
 
         template: tmpl(
             '<span class="<%=className%>">' +
-                '<table><tr><td>' +
+                '<table><tr>' +
+                '<td style="display: inline-block;"><div class="<%=className%>-label"><span><%=settings.from%></span></div></td>' +
+
+                '<td>' +
                 '<div class="<%=className%>-bg">' +
                 '<i class="l"></i><i class="ms"></i><i class="f"></i><i class="me"></i><i class="r"></i>' +
                 '<i class="v"></i>' +
@@ -179,15 +182,14 @@
                 '<div class="<%=className%>-pointer"></div>' +
                 '<div class="<%=className%>-pointer <%=className%>-pointer-to"></div>' +
 
-                '<div class="<%=className%>-label"><span><%=settings.from%></span></div>' +
-                '<div class="<%=className%>-label <%=className%>-label-to"><span><%=settings.to%></span><%=settings.dimension%></div>' +
-
                 '<div style="display:none;" class="<%=className%>-value"><span></span><%=settings.dimension%></div>' +
                 '<div class="<%=className%>-value <%=className%>-value-to"><span></span><%=settings.dimension%></div>' +
 
                 '<div class="<%=className%>-scale"><%=scale%></div>' +
 
-                '</td></tr></table>' +
+                '</td>' +
+                '<td><div class="<%=className%>-label <%=className%>-label-to"><span><%=settings.to%></span><%=settings.dimension%></div></td>' +
+                '</tr></table>' +
                 '</span>'
         )
 
@@ -432,6 +434,8 @@
     };
 
     jSlider.prototype.drawScale = function () {
+
+        // <span class='.jslider-scale'> .... </>
         this.domNode.find(OPTIONS.selector + "scale span ins").each(function () {
             $(this).css({ marginLeft: -$(this).outerWidth() / 2 });
         });
@@ -478,8 +482,10 @@
         this.setValue();
 
         // redraw range line
-        if (this.o.pointers[0] && this.o.pointers[1])
-            this.o.value.css({ left: this.o.pointers[0].value.prc + "%", width: ( this.o.pointers[1].value.prc - this.o.pointers[0].value.prc ) + "%" });
+        if (this.o.pointers[0] && this.o.pointers[1]) {
+            var calcWidth =  ( this.o.pointers[1].value.prc - this.o.pointers[0].value.prc );
+            this.o.value.css({ left: this.o.pointers[0].value.prc + "%", width:  calcWidth + "%" });
+        }
 
         this.o.labels[pointer.uid].value.html(
             this.nice(
@@ -532,7 +538,7 @@
             switch (pointer.uid) {
                 case 0:
                     if (sizes.border + sizes.label / 2 > another_label.o.offset().left - this.sizes.domOffset.left) {
-                       // TODO another_label.o.css({ visibility: "hidden" });
+                        // TODO another_label.o.css({ visibility: "hidden" });
                         another_label.value.html(this.nice(another.value.origin));
 
                         label.o.css({ visibility: "visible" });
@@ -550,7 +556,7 @@
 
                 case 1:
                     if (sizes.border - sizes.label / 2 < another_label.o.offset().left - this.sizes.domOffset.left + another_label.o.outerWidth()) {
-                       // another_label.o.css({ visibility: "hidden" });
+                        // another_label.o.css({ visibility: "hidden" });
                         another_label.value.html(this.nice(another.value.origin));
 
                         label.o.css({ visibility: "visible" });
@@ -608,13 +614,13 @@
             }
 
             /*
-            for (var i = 0; i < limits.length; i++) {
-                if (limits[i])
-                    this.o.limits[i].fadeIn("fast");
-                else
-                    this.o.limits[i].fadeOut("fast");
-            }
-            */
+             for (var i = 0; i < limits.length; i++) {
+             if (limits[i])
+             this.o.limits[i].fadeIn("fast");
+             else
+             this.o.limits[i].fadeOut("fast");
+             }
+             */
         }
     };
 
