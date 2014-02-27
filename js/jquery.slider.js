@@ -129,6 +129,10 @@
                         self.setSkin(args[1]);
 
                         break;
+
+                    case "ranges":
+                        returnValue = [ self.settings.from, self.settings.to ];
+                        break;
                 }
                 ;
 
@@ -171,8 +175,6 @@
         template: tmpl(
             '<span class="<%=className%>">' +
                 '<table><tr>' +
-                '<td style="display: inline-block;"><div class="<%=className%>-label"><span><%=settings.from%></span></div></td>' +
-
                 '<td>' +
                 '<div class="<%=className%>-bg">' +
                 '<i class="l"></i><i class="ms"></i><i class="f"></i><i class="me"></i><i class="r"></i>' +
@@ -188,7 +190,6 @@
                 '<div class="<%=className%>-scale"><%=scale%></div>' +
 
                 '</td>' +
-                '<td><div class="<%=className%>-label <%=className%>-label-to"><span><%=settings.to%></span><%=settings.dimension%></div></td>' +
                 '</tr></table>' +
                 '</span>'
         )

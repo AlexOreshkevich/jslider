@@ -49,6 +49,17 @@
         }
     </style>
 
+    <script type="text/javascript">
+        siski = function() {
+            try {
+            alert ($('#SliderSingle').slider("ranges")[0]);
+            }
+            catch (e) {
+                     alert(e.message);
+            }
+        }
+    </script>
+
 </head>
 <body>
 
@@ -75,9 +86,10 @@
         }
 
     });
+
 </script>
 </div>
-
+<input type="button" value="Проверить" onclick="siski()">
 
 </body>
 </html>
